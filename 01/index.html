@@ -7,8 +7,15 @@
 </head>
 <body>
     <div id="body">
-        {{ nombre }} <br><br>
-        <input type="text" v-model="nombre"/>
+        {{ nuevaTarea }} <br><br>
+        <input type="text" v-model="nuevaTarea" placeholder="Introduce tarea" />
+        <input type="button" value="Añadir tarea" @click="guardarTarea(nuevaTarea)">
+        
+        <h4>Tareas</h4>
+        <ul>
+            <li v-for="tarea in tareas">{{ tarea.nombre }}</li>
+        </ul>
+
         <pre>
             {{ $data | json }}
         </pre>
@@ -18,7 +25,18 @@
         new Vue({
             el: '#body',
             data: {
-                nombre: 'DO Padcast'
+                nuevaTarea: '',
+                tareas : [
+                    {nombre: 'Hacer la compra'},
+                    {nombre: 'Grabar episodio'},
+                    {nombre: 'Editar episodio'},
+                ]
+            },
+            methods: {
+                guardarTarea: function (tarea) {
+                    this.tareas.push({nombre: tarea});
+                    this.nuevaTarea = '';
+                }
             }
         })
     </script>
