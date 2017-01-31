@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Bim</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="body">
+        {{ nombre }} <br><br>
+        <input type="text" v-model="nombre"/>
+        <pre>
+            {{ $data | json }}
+        </pre>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#body',
+            data: {
+                nombre: 'DO Padcast'
+            }
+        })
+    </script>
+</body>
+</html>
