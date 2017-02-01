@@ -13,7 +13,7 @@
         
         <h4>Tareas</h4>
         <ul>
-            <li v-for="tarea in tareas">{{ tarea.nombre }}</li>
+            <li v-for="tarea in tareas"><a href="#" @click="eliminarTarea(tarea)">X</a> {{ tarea.nombre }}</li>
         </ul>
 
         <pre>
@@ -34,8 +34,15 @@
             },
             methods: {
                 guardarTarea: function (tarea) {
-                    this.tareas.push({nombre: tarea});
-                    this.nuevaTarea = '';
+                    if(tarea.trim()) {
+                        this.tareas.push({nombre: tarea});
+                        this.nuevaTarea = '';
+                    } else 
+                        alert("Debes introducir un dato en la tarea");
+                },
+                eliminarTarea: function (tarea) {
+                    if(confirm("¿Eliminar " + tarea.nombre + "?")) 
+                        this.tareas.$remove(tarea);
                 }
             }
         })
