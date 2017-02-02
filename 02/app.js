@@ -2,6 +2,7 @@ new Vue({
     el: '#body',
     data: {
         nombre: 'Juan',
-        clase: 'color-azul'
+        clase: 'color-azul',
+        autentificado: false
     }
 });
