@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <title>VueJs</title>
     <script src="../../vue.js"></script>
+    <style>
+        input, textarea {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    
+    <form action="#">
+        <textarea cols="30" rows="10" placeholder="Escribe tu mensaje" required v-model="mensaje"></textarea>
+        <input type="submit" value="Enviar Mensaje">
+
+        <pre>
+            {{ $data | json }}
+        </pre>
+    </form>
 
     <script>
         new Vue({
-            el: 'body'
+            el: 'body',
+            data: {
+                mensaje: '',
+            }
         });
     </script>
 </body>
