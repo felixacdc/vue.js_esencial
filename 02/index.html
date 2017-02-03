@@ -15,6 +15,8 @@
         <h3 v-if="15>50">Esto es un heading 02</h3>
         <h4 v-if="autentificado">Autentificado</h4>
         <p :class="clase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus tenetur, ipsam nihil quasi natus harum unde dolore dolor. Fugiat autem quisquam dignissimos sint, saepe itaque blanditiis facere non illo laborum.</p>
+
+        <a v-bind:href="direccion" @click="accion" target="_blank">Esto es un enlace</a>
     </div>
     
     <script src="app.js"></script>
