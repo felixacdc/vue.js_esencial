@@ -9,12 +9,16 @@
             display: block;
             margin: 10px 0;
         }
+        .alerta {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <form action="#">
+        <p class="alerta" v-if="!mensaje">Debes introducir un mensaje</p>
         <textarea cols="30" rows="10" placeholder="Escribe tu mensaje" required v-model="mensaje"></textarea>
-        <input type="submit" value="Enviar Mensaje">
+        <input type="submit" value="Enviar Mensaje" v-if="mensaje">
 
         <pre>
             {{ $data | json }}
