@@ -15,18 +15,20 @@
                 <div class="panel-body">
                     <form action="">
                         <div class="form-group">
-                            <input type="text" placeholder="Nombre" class="form-control">
+                            <input v-model="nombre" type="text" placeholder="Nombre" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="number" placeholder="Edad" class="form-control">
+                            <input v-model="edad" type="number" placeholder="Edad" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Sexo" class="form-control">
+                            <input v-model="sexo" type="text" placeholder="Sexo" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Correo-e" class="form-control">
+                            <input v-model="correo" type="email" placeholder="Correo-e" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-info pull-right">Enviar datos</button>
+                        <button v-if="nombre && edad && sexo && correo" type="submit" class="btn btn-info pull-right">
+                            Enviar datos
+                        </button>
                     </form>
                 </div>
                 <div class="panel-footer">

@@ -4,6 +4,6 @@ new Vue({
         nombre: null,
         edad: null,
         sexo: null,
-        email: null
+        correo: null
     }
 });
