@@ -13,5 +13,10 @@ new Vue({
             else
                 alert('Rellena todos los campos');
         }
+    },
+    computed: {
+        todaLaInformacion: function() {
+            return this.nombre && this.edad && this.sexo && this.correo;
+        }
     }
 });
