@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <div id="main" class="panel panel-default">
                 <div class="panel-body">
-                    <form action="">
+                    <form action="" @submit.prevent="enviarDatos">
                         <div class="form-group">
                             <input v-model="nombre" type="text" placeholder="Nombre" class="form-control">
                         </div>
@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <input v-model="correo" type="email" placeholder="Correo-e" class="form-control">
                         </div>
-                        <button v-if="nombre && edad && sexo && correo" type="submit" class="btn btn-info pull-right">
+                        <button type="submit" class="btn btn-info pull-right">
                             Enviar datos
                         </button>
                     </form>
