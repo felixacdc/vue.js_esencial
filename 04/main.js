@@ -8,6 +8,9 @@ new Vue({
             console.log(_evt);
             alert('Buenas tardes ' + nombre);
             alert('Buenas tardes ' + this.nombre);
+        },
+        enviar: function() {
+            alert("Enviar formulario");
         }
     }
 });
