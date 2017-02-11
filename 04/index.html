@@ -16,7 +16,7 @@
                 <form @submit.prevent="enviar" action="" method="POST">
                     <input type="text" class="form-control" v-model="nombre"><br>
                     <input type="submit" class="btn btn-info" value="Enviar Formulario">
-                    <button @click="saludar('Félix', $event)" @keyup="teclaPulsada" class="btn btn-success">
+                    <button @click="saludar('Félix', $event)" @keyup.left="teclaPulsada" class="btn btn-success">
                         Click aquí
                     </button>
                 </form>

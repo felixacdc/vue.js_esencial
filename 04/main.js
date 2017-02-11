@@ -16,7 +16,7 @@ new Vue({
             alert("Abrir enlace");
         },
         teclaPulsada: function(_evt) {
-            alert(_evt);
+            console.log(_evt.code);
         }
     }
 });
