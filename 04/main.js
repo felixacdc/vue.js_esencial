@@ -11,6 +11,12 @@ new Vue({
         },
         enviar: function() {
             alert("Enviar formulario");
+        },
+        abrirEnlace: function() {
+            alert("Abrir enlace");
+        },
+        teclaPulsada: function(_evt) {
+            alert(_evt);
         }
     }
 });
