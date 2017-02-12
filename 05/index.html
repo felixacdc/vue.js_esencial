@@ -24,6 +24,23 @@
                         {{ numero }}
                     </li>
                 </ul>
+                <hr>
+                <ul>
+                    <li v-for="dia in semana">
+                        <strong>{{ dia.nombre }}:</strong> {{ dia.numero }}
+                    </li>
+                </ul>
+                <hr>
+                <ul>
+                    <li v-for="numero in 10">
+                        {{ numero }}
+                    </li>
+                </ul>
+                <hr>
+                <template v-for="numero in numeros">
+                    <h1>{{ numero }}</h1>
+                    <hr>
+                </template>
             </div>
         </div>
     </div>
