@@ -25,11 +25,12 @@ new Vue({
         // Estilos directos, a través de objeto
         objetoEstilo: {
             color: 'green',
-            fontSize: '60px'
+            fontSize: '30px'
         },
         otroObjetoEstilo: {
             textDecoration: 'underline',
             transform: 'rotate(30deg)',
-        }
+        },
+        color: ''
     }
 });

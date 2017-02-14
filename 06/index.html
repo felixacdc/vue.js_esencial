@@ -12,6 +12,12 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
+                <input type="color" v-model="color">
+                <pre>
+                    {{ $data | json }}
+                </pre>
+                <h3 v-bind:style="{color: color}">Cambio de color!!!</h3>
+                <hr>
                 <h2 v-bind:style="[objetoEstilo, otroObjetoEstilo]">
                     Estilos directos, a traves de varios objetos
                 </h2>
