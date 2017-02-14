@@ -16,6 +16,20 @@ new Vue({
         listadoDeClases: {
             azul: 'azul',
             subrayado: 'subrayado'
+        },
+
+        // Estilos directos
+        colorFuente: 'green',
+        tamanoFuente: '60px',
+
+        // Estilos directos, a través de objeto
+        objetoEstilo: {
+            color: 'green',
+            fontSize: '60px'
+        },
+        otroObjetoEstilo: {
+            textDecoration: 'underline',
+            transform: 'rotate(30deg)',
         }
     }
 });
