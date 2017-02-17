@@ -21,6 +21,9 @@
     <template id="cita">
         <div class="jumbotron">
             <h3>{{ citaElegida }}</h3>
+            <h2 v-if="votos > 0">{{ votos }}</h2>
+            <button class="btn btn-sm btn-info" @click="sumarVoto">Me gusta</button>
+            <button class="btn btn-sm btn-danger" @click="restarVoto">No me gusta</button>
         </div>
     </template>
     <script src="main.js"></script>

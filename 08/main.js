@@ -5,6 +5,7 @@ Vue.component('cita', {
     },
     data: function() {
         return {
+            votos: 0,
             citaElegida: '',
             citas: [
                 '"It might help if we ran the MBAs out of Washington." -- Admiral Grace Hopper',
@@ -19,6 +20,13 @@ Vue.component('cita', {
         elegirCita: function() {
             let cita = this.citas[Math.floor(Math.random() * this.citas.length)];
             this.citaElegida = cita;
+        },
+        sumarVoto: function() {
+            this.votos++;
+        },
+        restarVoto: function() {
+            if(this.votos > 0)
+                this.votos--;
         }
     }
 });
