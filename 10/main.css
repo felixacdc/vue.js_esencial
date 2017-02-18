@@ -1,0 +1,6 @@
+.ocultar-transition {
+    transition: all 1s linear;
+}
+.ocultar-enter, .ocultar-leave {
+    opacity: 0;
+}
