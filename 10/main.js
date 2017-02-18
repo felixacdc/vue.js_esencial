@@ -1,6 +1,12 @@
+Vue.transition('rotate', {
+    enterClass: 'rotateInDownLeft',
+    leaveClass: 'rotateOutDownRight'
+});
+
 new Vue({
     el: 'body',
     data: {
-        mensaje: 'Transición'
+        mensaje: 'Transición',
+        visible: true
     }
 });

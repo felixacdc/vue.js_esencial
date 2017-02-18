@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Vue | Transiciones</title>
     <link rel="stylesheet" href="../bootstrap.min.css">
+    <link rel="stylesheet" href="../animate.css">
     <link rel="stylesheet" href="main.css">
     <script src="../vue.js"></script>
 </head>
@@ -13,10 +14,12 @@
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <br>
-                <div class="well well-sm" transition="ocultar">
-                    <h1>{{ mensaje }}</h1>
+                <div class="well well-sm">
+                    <h1 v-show="visible" class="animated" transition="rotate">{{ mensaje }}</h1>
                 </div>
-                <button class="btn btn-success">Toggle</button>
+                <button class="btn btn-success" @click="visible = !visible">Toggle</button>
+                <hr>
+                <pre>{{ $data | json }}</pre>
             </div>
         </div>
     </div>
