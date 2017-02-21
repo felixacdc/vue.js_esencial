@@ -17,6 +17,14 @@
                 <hr>
                 <input type="checkbox" id="checkbox" v-model="chequeado"> 
                 <label for="checkbox"> {{ chequeado }}</label>
+                <hr>
+                <input type="radio" id="one" value="Vue.js" v-model="radio">
+                <label for="one">Vue.js</label>
+                <br>
+                <input type="radio" id="two" value="Angular.js" v-model="radio">
+                <label for="two">Angular.js</label>
+                <br>
+                <span>Respuesta: {{ radio }}</span>
             </div>
         </div>
     </div>
