@@ -25,6 +25,14 @@
                 <label for="two">Angular.js</label>
                 <br>
                 <span>Respuesta: {{ radio }}</span>
+                <hr>
+                <select class="form-control" v-model="seleccionado">
+                    <option v-for="tarea in tareas" :value="tarea.titulo">
+                        {{ tarea.titulo }}
+                    </option>
+                </select>
+                <br>
+                <pre>{{ $data | json}}</pre>
             </div>
         </div>
     </div>
