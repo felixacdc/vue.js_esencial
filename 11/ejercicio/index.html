@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue | Transiciones</title>
+    <link rel="stylesheet" href="../../bootstrap.min.css">
+    <script src="../../vue.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form action="#" @submit.prevent="sendForm">
+                    <h1>Formulario</h1>
+                    <hr>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" v-model="nombre" class="form-control" placeholder="Escriba el nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" v-model="ciudad" class="form-control" placeholder="Escriba la ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Ciudad:</label>
+                        <input type="checkbox" id="direccion" v-model="boolDireccion">
+                        <textarea cols="30" rows="4" class="form-control" placeholder="Escriba la direccion" required v-model="direccion" v-if="boolDireccion"></textarea> 
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
