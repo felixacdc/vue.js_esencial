@@ -12,7 +12,13 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-
+                <h1>Vue Resource</h1>
+                <hr>
+                <ul>
+                    <li v-for="persona in personas">{{ persona.name.first }}</li>
+                </ul>
+                <hr>
+                <pre>{{ $data | json }}</pre>
             </div>
         </div>
     </div>

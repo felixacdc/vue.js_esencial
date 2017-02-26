@@ -5,11 +5,15 @@ new Vue({
     created: function() {
         this.consultarAPI();
     },
+    data: {
+        personas: []
+    },
     methods: {
         consultarAPI: function() {
+            let _this = this;
             this.$http.get(urlAPI)
                 .then(function(respuesta) {
-                    console.log(respuesta);
+                    _this.personas = respuesta.data.results;
                 });
         }
     }
