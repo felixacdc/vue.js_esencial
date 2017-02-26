@@ -16,5 +16,11 @@ new Vue({
                     _this.personas = respuesta.data.results;
                 });
         }
+    },
+    components: {
+        'personas': {
+            template: '#personas-template',
+            props: ['lista']
+        }
     }
 });

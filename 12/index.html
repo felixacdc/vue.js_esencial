@@ -14,11 +14,15 @@
             <div class="col-md-8">
                 <h1>Vue Resource</h1>
                 <hr>
-                <ul>
-                    <li v-for="persona in personas">{{ persona.name.first }}</li>
-                </ul>
+                <personas :lista="personas"></personas>
                 <hr>
                 <pre>{{ $data | json }}</pre>
+                <hr>
+                <template id="personas-template">
+                    <ul>
+                        <li v-for="persona in lista">{{ persona.name.first }}</li>
+                    </ul>
+                </template>
             </div>
         </div>
     </div>
