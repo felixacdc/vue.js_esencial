@@ -27,6 +27,12 @@ new Vue({
                 });
         },
         buscar: function() {
+            let _this = this;
+            this.tareas_filtradas = this.tareas.filter(function(elemento) {
+                let stringSearch = _this.busqueda.toLowerCase();
+                if(elemento.title.search(stringSearch) >= 0)
+                        return true;
+            });
 
         }
     }
