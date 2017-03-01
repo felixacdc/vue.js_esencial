@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue | Transiciones</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-5 col-lg-offset-3 col-lg-5">
+            <h2>ToDo App</h2>
+            <!-- Formulario -->
+            <form @submit.prevent="agregarTarea(nuevaTarea)"
+                  class="form">
+                <div class="input-group">
+                    <input v-model="nuevaTarea"
+                           type="text" class="form-control">
+                      <span class="input-group-btn">
+                          <button class="btn btn-default" type="submit"><span
+                                    class="fa fa-plus"></span> Añadir tarea</button>
+                      </span>
+                </div>
+            </form>
+            <!-- Listado de tareas -->
+            <ul class="list-group">
+                <li v-for="tarea in tareas"
+                    class="list-group-item clearfix">
+                    <p class="lead" :class="{completado: tarea.completado}">
+                        {{ tarea.titulo }}
+                    </p>
+                    <input v-model="tarea.titulo"
+                           v-show="editandoTarea === $index"
+                           @blur="editandoTarea = null, editarTarea(tarea)"
+                           type="text">
+                    <div>
+                        <span class="pull-right">
+                            <button @click="editandoTarea = $index"
+                                    class="btn btn-default btn-xs">
+                                <span class="fa fa-pencil"></span>
+                            </button>
+                            <button v-show="editandoTarea === $index"
+                                    @click="editandoTarea = null, editarTarea(tarea)"
+                                    class="btn btn-default btn-xs">
+                                <span class="fa fa-floppy-o"></span>
+                            </button>
+                            <button @click="tarea.completado = true"
+                                    class="btn btn-primary btn-xs">
+                                <span class="fa fa-check"></span></button>
+                            <button @click="tarea.completado = false"
+                                    class="btn btn-primary btn-xs">
+                                <span class="fa fa-repeat"></span>
+                            </button>
+                            <button @click="eliminarTarea($index)"
+                                    class="btn btn-danger btn-xs">
+                                <span class="fa fa-remove"></span>
+                            </button>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <pre>{{ $data | json }}</pre>
+
+    <script src="main.js"></script>
+</body>
+</html>
