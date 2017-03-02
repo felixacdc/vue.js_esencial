@@ -12,7 +12,13 @@ new Vue({
     },
     methods: {
         agregarTarea: function(tarea) {
-            console.info(tarea);
+            this.tareas.unshift({
+                titulo: tarea, completado: false
+            });
+            this.nuevaTarea = "";
+        },
+        eliminarTarea: function(indice) {
+            this.tareas.splice(indice, 1);
         }
     }
 });
