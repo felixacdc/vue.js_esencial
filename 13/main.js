@@ -19,7 +19,7 @@ new Vue({
             this.nuevaTarea = "";
         },
         editarTarea: function(tarea) {
-
+            console.info(tarea)
         },
         eliminarTarea: function(indice) {
             this.tareas.splice(indice, 1);

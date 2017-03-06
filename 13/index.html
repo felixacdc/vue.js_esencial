@@ -31,6 +31,7 @@
                         {{ tarea.titulo }}
                     </p>
                     <input v-model="tarea.titulo" v-show="editandoTarea === $index"
+                        @blur="editandoTarea = null, editarTarea(tarea)"
                         type="text" class="form-control">
                     <br>
                     <div>
@@ -39,7 +40,8 @@
                                 class="btn btn-default btn-xs" @click="editandoTarea = $index">
                                 <span class="fa fa-pencil"></span>
                             </button>
-                            <button
+                            <button v-show="editandoTarea === $index"
+                                @click="editandoTarea = null, editarTarea(tarea)"
                                 class="btn btn-default btn-xs">
                                 <span class="fa fa-floppy-o"></span>
                             </button>
