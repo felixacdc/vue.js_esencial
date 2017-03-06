@@ -30,12 +30,13 @@
                     <p class="lead" :class="{completado: tarea.completado}">
                         {{ tarea.titulo }}
                     </p>
-                    <input v-model="tarea.titulo"
-                        type="text">
+                    <input v-model="tarea.titulo" v-show="editandoTarea === $index"
+                        type="text" class="form-control">
+                    <br>
                     <div>
                         <span class="pull-right">
                             <button
-                                class="btn btn-default btn-xs">
+                                class="btn btn-default btn-xs" @click="editandoTarea = $index">
                                 <span class="fa fa-pencil"></span>
                             </button>
                             <button

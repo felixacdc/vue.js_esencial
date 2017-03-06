@@ -2,6 +2,7 @@ new Vue({
     el: 'body',
     data: {
         nuevaTarea: null,
+        editandoTarea: null,
         tareas: [
             {titulo: 'Salir a correr', completado: false},
             {titulo: 'Ir al gimnasio', completado: false},
@@ -16,6 +17,9 @@ new Vue({
                 titulo: tarea, completado: false
             });
             this.nuevaTarea = "";
+        },
+        editarTarea: function(tarea) {
+
         },
         eliminarTarea: function(indice) {
             this.tareas.splice(indice, 1);
