@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="container">
+        <todo-list :tareas="tareas"></todo-list>
+    </div>
+    <pre>{{ $data | json }}</pre>
+    
+    <template id="todo-template">
         <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-5 col-lg-offset-3 col-lg-5">
             <h2>ToDo App</h2>
             <!-- Formulario -->
@@ -62,9 +67,7 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <pre>{{ $data | json }}</pre>
-
+    </template>
     <script src="main.js"></script>
 </body>
 </html>
