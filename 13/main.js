@@ -9,7 +9,8 @@ var config = {
 
 firebase.initializeApp(config);
 
-var db = firebase.database();
+var db = firebase.database(),
+    auth = firebase.auth();
 
 Vue.component('todo-list', {
     template: '#todo-template',
@@ -48,16 +49,12 @@ Vue.component('todo-list', {
 var vm = new Vue({
     el: 'body',
     data: {
-        /*tareas: [
-            {titulo: 'Salir a correr', completado: false},
-            {titulo: 'Ir al gimnasio', completado: true},
-            {titulo: 'Limpiar el coche', completado: false},
-            {titulo: 'Hacer la compra', completado: false},
-            {titulo: 'Aprender VueJs & Firebase', completado: false}
-        ]*/
+        autentificado: false,
+        usuarioActivo: null,
         tareas: []
     },
     ready: function() {
+        // RT Database
         db.ref('tareas/').on('value', function(snapshot) {
             vm.tareas = [];
             var objeto = snapshot.val();
@@ -68,6 +65,15 @@ var vm = new Vue({
                     completado: objeto[propiedad].completado,
                     titulo: objeto[propiedad].titulo
                 });
+            }
+        });
+        
+        // Auth
+        auth.onAuthStateChanged(function(user) {
+            if (user) {
+                console.info('Conectado: ' + user)
+            } else {
+                console.info('No conectado: ' + user)
             }
         });
     }
