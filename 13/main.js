@@ -76,5 +76,17 @@ var vm = new Vue({
                 console.info('No conectado: ' + user)
             }
         });
+    },
+    methods: {
+        conectar: function () {
+            firebase.auth().signInWithPopup(proveedor).catch(function (error) {
+                console.error('Error haciendo logIn: ', error);
+            });
+        },
+        desconectar: function () {
+            firebase.auth().signOut().catch(function (error) {
+                console.error('Error haciendo logOut: ', error);
+            });
+        }
     }
 });
