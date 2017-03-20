@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAN5oeJvB2rTGjwr2zfkk0YRZHV1AA5CQc",
+    authDomain: "vuefiredo-14aa4.firebaseapp.com",
+    databaseURL: "https://vuefiredo-14aa4.firebaseio.com",
+    storageBucket: "vuefiredo-14aa4.appspot.com",
+    messagingSenderId: "581245354999"
+};
+
+firebase.initializeApp(config);
+
 Vue.component('todo-list', {
     template: '#todo-template',
     data: function() {
