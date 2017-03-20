@@ -38,7 +38,7 @@ Vue.component('todo-list', {
     }
 });
 
-new Vue({
+var vm = new Vue({
     el: 'body',
     data: {
         /*tareas: [
@@ -49,5 +49,19 @@ new Vue({
             {titulo: 'Aprender VueJs & Firebase', completado: false}
         ]*/
         tareas: []
+    },
+    ready: function() {
+        db.ref('tareas/').on('value', function(snapshot) {
+            vm.tareas = [];
+            var objeto = snapshot.val();
+            
+            for(var propiedad in objeto) {
+                vm.tareas.unshift({
+                    '.key': propiedad,
+                    completado: objeto[propiedad].completado,
+                    titulo: objeto[propiedad].titulo
+                });
+            }
+        });
     }
 });
