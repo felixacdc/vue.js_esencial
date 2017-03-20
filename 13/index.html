@@ -70,7 +70,7 @@
     <!-- Fin navbar -->
 
     <div class="container">
-        <todo-list :tareas="tareas"></todo-list>
+        <todo-list :tareas="tareas" :autentificado='autentificado' :usuarioActivo='usuarioActivo'></todo-list>
     </div>
     <pre>{{ $data | json }}</pre>
     
@@ -82,9 +82,9 @@
                   class="form">
                 <div class="input-group">
                     <input v-model="nuevaTarea"
-                           type="text" class="form-control">
+                           type="text" class="form-control" required>
                       <span class="input-group-btn">
-                          <button class="btn btn-default" type="submit"><span
+                          <button class="btn btn-default" type="submit" :disabled="!autentificado"><span
                                     class="fa fa-plus"></span> Añadir tarea</button>
                       </span>
                 </div>

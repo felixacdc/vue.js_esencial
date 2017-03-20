@@ -21,7 +21,7 @@ Vue.component('todo-list', {
             editandoTarea: null
         }
     },
-    props:['tareas'],
+    props:['tareas', 'autentificado', 'usuarioActivo'],
     methods: {
         agregarTarea: function(tarea) {
             db.ref('tareas/').push({
