@@ -10,7 +10,8 @@ var config = {
 firebase.initializeApp(config);
 
 var db = firebase.database(),
-    auth = firebase.auth();
+    auth = firebase.auth(),
+    proveedor = new firebase.auth.GoogleAuthProvider();
 
 Vue.component('todo-list', {
     template: '#todo-template',
@@ -79,12 +80,12 @@ var vm = new Vue({
     },
     methods: {
         conectar: function () {
-            firebase.auth().signInWithPopup(proveedor).catch(function (error) {
+            auth.signInWithPopup(proveedor).catch(function (error) {
                 console.error('Error haciendo logIn: ', error);
             });
         },
         desconectar: function () {
-            firebase.auth().signOut().catch(function (error) {
+            auth.signOut().catch(function (error) {
                 console.error('Error haciendo logOut: ', error);
             });
         }

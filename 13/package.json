@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Servidor para levantar aplicacion",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Félix Méndez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
