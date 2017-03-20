@@ -30,7 +30,9 @@ Vue.component('todo-list', {
             this.nuevaTarea = "";
         },
         editarTarea: function(tarea) {
-            console.info(tarea)
+            db.ref('tareas/' + tarea['.key']).update({
+                titulo: tarea.titulo
+            });
         },
         eliminarTarea: function(indice) {
             this.tareas.splice(indice, 1);
