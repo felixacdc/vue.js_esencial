@@ -34,8 +34,13 @@ Vue.component('todo-list', {
                 titulo: tarea.titulo
             });
         },
-        eliminarTarea: function(indice) {
-            this.tareas.splice(indice, 1);
+        actualizarEstadoTarea: function(estado, tarea) {
+            db.ref('tareas/' + tarea['.key']).update({
+                completado: estado ? true : false
+            });
+        },
+        eliminarTarea: function(tarea) {
+            db.ref('tareas/' + tarea['.key']).remove();
         }
     }
 });
