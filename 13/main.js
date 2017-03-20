@@ -22,9 +22,11 @@ Vue.component('todo-list', {
     props:['tareas'],
     methods: {
         agregarTarea: function(tarea) {
-            this.tareas.unshift({
-                titulo: tarea, completado: false
+            db.ref('tareas/').push({
+                titulo: tarea,
+                completado: false
             });
+
             this.nuevaTarea = "";
         },
         editarTarea: function(tarea) {
