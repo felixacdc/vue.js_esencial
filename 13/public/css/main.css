@@ -2,9 +2,20 @@
     width: 100%;
     margin-bottom: 15px;
 }
-
 .completado {
     text-decoration: line-through;
     font-style: italic;
     color: gray;
+}
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }

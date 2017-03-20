@@ -73,8 +73,12 @@ var vm = new Vue({
         auth.onAuthStateChanged(function(user) {
             if (user) {
                 console.info('Conectado: ' + user)
+                vm.autentificado = true;
+                vm.usuarioActivo = user;
             } else {
                 console.info('No conectado: ' + user)
+                vm.autentificado = false;
+                vm.usuarioActivo = null;
             }
         });
     },
