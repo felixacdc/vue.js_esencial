@@ -26,7 +26,10 @@ Vue.component('todo-list', {
         agregarTarea: function(tarea) {
             db.ref('tareas/').push({
                 titulo: tarea,
-                completado: false
+                completado: false,
+                nombre: vm.usuarioActivo.displayName,
+                avatar: vm.usuarioActivo.photoURL,
+                uid: vm.usuarioActivo.uid
             });
 
             this.nuevaTarea = "";
@@ -64,7 +67,10 @@ var vm = new Vue({
                 vm.tareas.unshift({
                     '.key': propiedad,
                     completado: objeto[propiedad].completado,
-                    titulo: objeto[propiedad].titulo
+                    titulo: objeto[propiedad].titulo,
+                    avatar: objeto[propiedad].avatar,
+                    nombre: objeto[propiedad].nombre,
+                    uid: objeto[propiedad].uid
                 });
             }
         });

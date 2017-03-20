@@ -19,3 +19,15 @@
     padding-bottom: 0px;
     padding-top: 0px;
 }
+.avatar-menu {
+    width: 80px;
+    border-radius: 7px;
+}
+.avatar {
+    width: 32px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+small {
+    font-size:11px;
+}

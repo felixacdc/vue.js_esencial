@@ -38,7 +38,7 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <p class="text-center">
-                                                <img style="width: 100px;" :src="usuarioActivo.photoURL">
+                                                <img class="avatar-menu" :src="usuarioActivo.photoURL">
                                             </p>
                                         </div>
                                         <div class="col-lg-8">
@@ -70,7 +70,7 @@
     <!-- Fin navbar -->
 
     <div class="container">
-        <todo-list :tareas="tareas" :autentificado='autentificado' :usuarioActivo='usuarioActivo'></todo-list>
+        <todo-list :tareas="tareas" :autentificado='autentificado' :usuario-activo='usuarioActivo'></todo-list>
     </div>
     <pre>{{ $data | json }}</pre>
     
@@ -94,13 +94,15 @@
                 <li v-for="tarea in tareas"
                     class="list-group-item clearfix">
                     <p class="lead" :class="{completado: tarea.completado}">
+                        <img class="avatar" :src="tarea.avatar">
                         {{ tarea.titulo }}
+                        <small>({{ tarea.nombre }})</small>
                     </p>
                     <input v-model="tarea.titulo" v-show="editandoTarea === $index"
                         @blur="editandoTarea = null, editarTarea(tarea)"
                         type="text" class="form-control">
                     <br>
-                    <div>
+                    <div v-show="tarea.uid === usuarioActivo.uid">
                         <span class="pull-right">
                             <button
                                 class="btn btn-default btn-xs" @click="editandoTarea = $index">
