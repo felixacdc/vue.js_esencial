@@ -7,4 +7,10 @@ function activar(orden) {
 	}
 }
 
-activar(false);
+//activar(false);
+
+for (let i = 0; i <= 100; i++) {
+    console.log(i);   
+}
+
+console.log("Valor final: " + i);
