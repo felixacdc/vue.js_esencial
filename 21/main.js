@@ -30,10 +30,31 @@ class Humano {
 	set cambiarCiudad(ciudad) {
 		this.ciudad = ciudad;
 	}
+
+	static caminar() {
+		console.log('Estoy caminando...');
+	}
 }
 
+// let andres = new Humano('Andres', 'Nuñez', 'Valencia');
+// console.dir(andres);
+// console.log(andres.nombreCompleto)
+// andres.cambiarCiudad = 'Ponferrada';
+// console.dir(andres);
 let andres = new Humano('Andres', 'Nuñez', 'Valencia');
-console.dir(andres);
-console.log(andres.nombreCompleto)
-andres.cambiarCiudad = 'Ponferrada';
-console.dir(andres);
+andres.saludar();
+Humano.caminar();
+
+class Aleman extends Humano {
+	hablar() {
+		console.log('Guten Abend');
+	}
+
+	saludar() {
+		console.log('Hallo, ich bin ' + this.nombre + ' und ich lebe in ' + this.ciudad);
+	}
+}
+
+let helmut = new Aleman('Helmut', 'Franz', 'Munich');
+helmut.hablar();
+helmut.saludar();
