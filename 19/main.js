@@ -23,3 +23,24 @@ var dias = ['Lunes', 'Martes', 'Miercoles', 'Juevez', 'Viernes'];
 
 // console.log(multiplicar(10,10));
 
+// sin parametros
+// let saludar = function() {
+// 	console.log('buenas tardes');
+// };
+
+// saludar();
+// let saludar = () => console.log('buenas taredes');
+
+// saludar();
+
+// bloque de sentencias
+// let despedir = function() {
+// 	console.log('Me voy');
+// 	console.log('Hasta pronto');
+// }
+
+let despedir = () => {
+	console.log('Me voy');
+	console.log('Hasta pronto');
+}
+despedir();
